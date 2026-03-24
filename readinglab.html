@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- [SEO] 기본 메타 데이터 -->
     <title>whoruruk의 독서 Lab | 문장 아카이브 & 독서 포트폴리오</title>
     <meta name="description" content="whoruruk의 독서 Lab입니다. 문장 아카이브, 독서 목록, 최애의 독서 큐레이션 등 독서 기록과 프로젝트를 만나보세요.">
     <meta name="keywords" content="whoruruk, 독서Lab, 독서 포트폴리오, 문장 아카이브, Book Stack">
     <meta name="author" content="whoruruk">
     <link rel="canonical" href="https://whoruruk.github.io/">
 
-    <!-- [SEO] Open Graph (SNS 공유 최적화) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://whoruruk.github.io/">
     <meta property="og:title" content="whoruruk의 독서 Lab">
@@ -19,12 +17,10 @@
     <meta property="og:image" content="https://api.dicebear.com/7.x/avataaars/svg?seed=whoruruk">
     <meta property="og:site_name" content="whoruruk's Reading Lab">
 
-    <!-- [SEO] Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="whoruruk의 독서 Lab">
     <meta name="twitter:description" content="감도 높은 독서 프로젝트와 문장 아카이브를 확인해보세요.">
 
-    <!-- [SEO] 구조화 데이터 (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -87,11 +83,13 @@
         }
 
         .neo-btn {
+            display: inline-block;
             background: var(--silhouette);
             color: white;
             border: 2px solid var(--pitch-black);
             box-shadow: 4px 4px 0px var(--pitch-black);
             transition: all 0.1s ease;
+            text-align: center;
         }
 
         .neo-btn:active {
@@ -159,16 +157,11 @@
 
     <header class="mb-16 reveal">
         <div class="flex flex-col lg:flex-row lg:items-center gap-6 mb-6">
-            <!-- Neo-Brutalism Book Stack Logo -->
             <div class="logo-wrapper w-24 h-24 flex-shrink-0">
                 <svg viewBox="0 0 100 100" class="logo-stack w-full h-full drop-shadow-[6px_6px_0px_rgba(0,0,0,1)]">
-                    <!-- Bottom Book -->
                     <rect x="10" y="60" width="70" height="25" fill="#FFFFFF" />
-                    <!-- Middle Book -->
                     <rect x="15" y="38" width="75" height="22" fill="var(--cool-blue)" />
-                    <!-- Top Book -->
                     <rect x="25" y="15" width="60" height="23" fill="var(--warm-mahogany)" />
-                    <!-- Book spine lines -->
                     <line x1="10" y1="72" x2="80" y2="72" stroke="black" stroke-width="2" />
                     <line x1="15" y1="49" x2="90" y2="49" stroke="black" stroke-width="2" />
                 </svg>
@@ -193,7 +186,6 @@
     </header>
 
     <main class="bento-container">
-        <!-- Intro Card (Large) -->
         <article class="neo-card p-10 col-span-1 md:col-span-2 row-span-1 flex flex-col justify-between reveal">
             <div>
                 <span class="tag-accent mb-6 inline-block">Human Intuition</span>
@@ -214,30 +206,26 @@
             </div>
         </article>
 
-        <!-- Lab 1 -->
         <section class="neo-card p-8 reveal" style="transition-delay: 0.1s;">
             <span class="tag-accent mb-3 inline-block">LAB 01</span>
             <h3 class="neo-bold text-2xl mb-3 italic"> 독서 기록</h3>
             <p class="text-base text-gray-600 mb-6 leading-relaxed">당신이 읽은 구절을<br>뫄뫄에 저장 📝</p>
-            <a href="#" class="text-3xl block text-right hover:translate-x-2 transition-transform" aria-label="독서 기록 바로가기">→</a>
+            <a href="https://whoruruk.github.io/archive/" class="text-3xl block text-right hover:translate-x-2 transition-transform" aria-label="독서 기록 바로가기">→</a>
         </section>
 
-        <!-- Lab 2 -->
         <section class="neo-card p-8 reveal" style="transition-delay: 0.2s;">
             <span class="tag-accent mb-3 inline-block">LAB 02</span>
             <h3 class="neo-bold text-2xl mb-3 italic">Book Stack</h3>
             <p class="text-base text-gray-600 mb-6 leading-relaxed">읽을 책, 쌓다보면<br>언젠가 보겠지 📚</p>
-            <a href="#" class="text-3xl block text-right hover:translate-x-2 transition-transform" aria-label="Book Stack 바로가기">→</a>
+            <a href="https://whoruruk.github.io/bookstack/" class="text-3xl block text-right hover:translate-x-2 transition-transform" aria-label="Book Stack 바로가기">→</a>
         </section>
 
-        <!-- Highlight Card -->
         <aside class="neo-card p-10 row-span-1 md:row-span-2 flex flex-col justify-center items-center text-center reveal" style="background-color: var(--cool-blue); color: var(--silhouette); transition-delay: 0.3s;">
             <div class="serif italic text-6xl mb-8 leading-tight">"Reading<br>is<br><span class="underline decoration-black/30 underline-offset-8">Rebellion</span>"</div>
             <p class="text-xs opacity-70 uppercase tracking-[0.3em] font-bold">2026 Philosophy</p>
             <div class="mt-12 border-t border-black/20 pt-6 w-full text-sm font-bold tracking-widest">WHORURUK.LAB</div>
         </aside>
 
-        <!-- Lab 3 -->
         <section class="neo-card p-10 col-span-1 md:col-span-2 reveal" style="transition-delay: 0.4s;">
             <div class="flex justify-between items-start mb-8">
                 <div>
@@ -247,10 +235,9 @@
                 <div class="text-5xl">💎</div>
             </div>
             <p class="mb-8 text-xl leading-relaxed">당신이 좋아하는, 그들이 읽은 책들. </p>
-            <button class="neo-btn px-8 py-3 font-bold uppercase tracking-widest text-sm">Explore curation</button>
+            <a href="https://whoruruk.github.io/favoread/" class="neo-btn px-8 py-3 font-bold uppercase tracking-widest text-sm">Explore curation</a>
         </section>
 
-        <!-- Status Card -->
         <section class="neo-card p-8 flex flex-col justify-center reveal" style="transition-delay: 0.5s;">
             <div class="text-xs font-bold text-stone-400 mb-2 uppercase tracking-widest">Reading Now</div>
             <div class="text-2xl font-bold serif italic mb-4">밀란 쿤데라 - 불멸</div>
