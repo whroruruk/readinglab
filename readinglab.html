@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- [SEO] 기본 메타 데이터 -->
+    <title>whoruruk의 독서 Lab | 문장 아카이브 & 독서 포트폴리오</title>
+    <meta name="description" content="whoruruk의 독서 Lab입니다. 문장 아카이브, 독서 목록, 최애의 독서 큐레이션 등 독서 기록과 프로젝트를 만나보세요.">
+    <meta name="keywords" content="whoruruk, 독서Lab, 독서 포트폴리오, 문장 아카이브, Book Stack">
+    <meta name="author" content="whoruruk">
+    <link rel="canonical" href="https://whoruruk.github.io/">
+
+    <!-- [SEO] Open Graph (SNS 공유 최적화) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://whoruruk.github.io/">
+    <meta property="og:title" content="whoruruk의 독서 Lab">
+    <meta property="og:description" content="골똘보다 골몰. 후루룩의 독서 Lab입니다.">
+    <meta property="og:image" content="https://api.dicebear.com/7.x/avataaars/svg?seed=whoruruk">
+    <meta property="og:site_name" content="whoruruk's Reading Lab">
+
+    <!-- [SEO] Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="whoruruk의 독서 Lab">
+    <meta name="twitter:description" content="감도 높은 독서 프로젝트와 문장 아카이브를 확인해보세요.">
+
+    <!-- [SEO] 구조화 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "whoruruk",
+      "jobTitle": "Curator & Developer",
+      "url": "https://whoruruk.github.io/",
+      "sameAs": [
+        "https://www.instagram.com/whoruruk_reading"
+      ],
+      "description": "독서와 코딩을 결합하여 새로운 기록의 가치를 만드는 크리에이터"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cloud-dancer: #F0EEE9;
+            --silhouette: #2C2C2C;
+            --warm-mahogany: #903B31;
+            --cool-blue: #93B6CC;
+            --pitch-black: #000000;
+        }
+
+        body {
+            background-color: var(--cloud-dancer);
+            color: var(--silhouette);
+            font-family: 'Noto Sans KR', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.05;
+            pointer-events: none;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            z-index: 9999;
+        }
+
+        .serif { font-family: 'Playfair Display', serif; }
+        .neo-bold { font-family: 'Archivo Black', sans-serif; }
+
+        .neo-card {
+            background: white;
+            border: 3px solid var(--pitch-black);
+            box-shadow: 8px 8px 0px var(--pitch-black);
+            transition: all 0.2s ease;
+            border-radius: 12px;
+        }
+
+        .neo-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 12px 12px 0px var(--pitch-black);
+        }
+
+        .neo-btn {
+            background: var(--silhouette);
+            color: white;
+            border: 2px solid var(--pitch-black);
+            box-shadow: 4px 4px 0px var(--pitch-black);
+            transition: all 0.1s ease;
+        }
+
+        .neo-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px var(--pitch-black);
+        }
+
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .bento-container { grid-template-columns: 1fr; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tag-accent {
+            background-color: var(--cool-blue);
+            color: var(--silhouette);
+            padding: 2px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            border: 1px solid var(--pitch-black);
+        }
+
+        .tag-mahogany {
+            background-color: var(--warm-mahogany);
+            color: white;
+            padding: 2px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .accent-blue { color: var(--cool-blue); }
+        .accent-red { color: var(--warm-mahogany); }
+
+        /* Custom Logo Shadow */
+        .logo-stack rect {
+            stroke: var(--pitch-black);
+            stroke-width: 3;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 lg:p-20">
+
+    <header class="mb-16 reveal">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-6 mb-6">
+            <!-- Neo-Brutalism Book Stack Logo -->
+            <div class="logo-wrapper w-24 h-24 flex-shrink-0">
+                <svg viewBox="0 0 100 100" class="logo-stack w-full h-full drop-shadow-[6px_6px_0px_rgba(0,0,0,1)]">
+                    <!-- Bottom Book -->
+                    <rect x="10" y="60" width="70" height="25" fill="#FFFFFF" />
+                    <!-- Middle Book -->
+                    <rect x="15" y="38" width="75" height="22" fill="var(--cool-blue)" />
+                    <!-- Top Book -->
+                    <rect x="25" y="15" width="60" height="23" fill="var(--warm-mahogany)" />
+                    <!-- Book spine lines -->
+                    <line x1="10" y1="72" x2="80" y2="72" stroke="black" stroke-width="2" />
+                    <line x1="15" y1="49" x2="90" y2="49" stroke="black" stroke-width="2" />
+                </svg>
+            </div>
+            
+            <h1 class="neo-bold text-5xl md:text-7xl lg:text-8xl leading-none tracking-tighter">
+                WHORURUK'S<br>READING LAB.
+            </h1>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b-4 border-black pb-6">
+            <div class="flex gap-6">
+                <span class="font-bold tracking-widest text-stone-600">EST. 2026</span>
+                <span class="font-bold tracking-widest text-stone-400">SEOUL, KR</span>
+            </div>
+            <nav class="serif italic text-lg accent-blue flex gap-4">
+                <span>Curating Thoughts</span>
+                <span>/</span>
+                <span>Coding Stories</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="bento-container">
+        <!-- Intro Card (Large) -->
+        <article class="neo-card p-10 col-span-1 md:col-span-2 row-span-1 flex flex-col justify-between reveal">
+            <div>
+                <span class="tag-accent mb-6 inline-block">Human Intuition</span>
+                <h2 class="text-4xl font-bold mb-6 italic serif">안녕하세요, <span class="accent-blue">whoruruk</span>입니다.</h2>
+                <p class="text-xl leading-relaxed mb-8 opacity-90">
+                    책을 좋아하는 사람일텐데, 많이는 못 읽고 있어요. <br>
+                    못 읽으면 여기서 책과 관련된 무언가를 만들어 봅니다.
+                </p>
+            </div>
+            <div class="flex gap-3 items-center">
+                <div class="w-14 h-14 rounded-full bg-stone-200 border-2 border-black overflow-hidden">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=whoruruk" alt="whoruruk Profile Image" loading="lazy">
+                </div>
+                <div>
+                    <div class="font-bold text-lg">whoruruk</div>
+                    <div class="text-sm opacity-50">@whoruruk_reading</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Lab 1 -->
+        <section class="neo-card p-8 reveal" style="transition-delay: 0.1s;">
+            <span class="tag-accent mb-3 inline-block">LAB 01</span>
+            <h3 class="neo-bold text-2xl mb-3 italic"> 독서 기록</h3>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed">당신이 읽은 구절을<br>뫄뫄에 저장 📝</p>
+            <a href="#" class="text-3xl block text-right hover:translate-x-2 transition-transform" aria-label="독서 기록 바로가기">→</a>
+        </section>
+
+        <!-- Lab 2 -->
+        <section class="neo-card p-8 reveal" style="transition-delay: 0.2s;">
+            <span class="tag-accent mb-3 inline-block">LAB 02</span>
+            <h3 class="neo-bold text-2xl mb-3 italic">Book Stack</h3>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed">읽을 책, 쌓다보면<br>언젠가 보겠지 📚</p>
+            <a href="#" class="text-3xl block text-right hover:translate-x-2 transition-transform" aria-label="Book Stack 바로가기">→</a>
+        </section>
+
+        <!-- Highlight Card -->
+        <aside class="neo-card p-10 row-span-1 md:row-span-2 flex flex-col justify-center items-center text-center reveal" style="background-color: var(--cool-blue); color: var(--silhouette); transition-delay: 0.3s;">
+            <div class="serif italic text-6xl mb-8 leading-tight">"Reading<br>is<br><span class="underline decoration-black/30 underline-offset-8">Rebellion</span>"</div>
+            <p class="text-xs opacity-70 uppercase tracking-[0.3em] font-bold">2026 Philosophy</p>
+            <div class="mt-12 border-t border-black/20 pt-6 w-full text-sm font-bold tracking-widest">WHORURUK.LAB</div>
+        </aside>
+
+        <!-- Lab 3 -->
+        <section class="neo-card p-10 col-span-1 md:col-span-2 reveal" style="transition-delay: 0.4s;">
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <span class="tag-mahogany mb-3 inline-block">LAB 03</span>
+                    <h3 class="neo-bold text-3xl italic">최애의 독서 ✨</h3>
+                </div>
+                <div class="text-5xl">💎</div>
+            </div>
+            <p class="mb-8 text-xl leading-relaxed">당신이 좋아하는, 그들이 읽은 책들. </p>
+            <button class="neo-btn px-8 py-3 font-bold uppercase tracking-widest text-sm">Explore curation</button>
+        </section>
+
+        <!-- Status Card -->
+        <section class="neo-card p-8 flex flex-col justify-center reveal" style="transition-delay: 0.5s;">
+            <div class="text-xs font-bold text-stone-400 mb-2 uppercase tracking-widest">Reading Now</div>
+            <div class="text-2xl font-bold serif italic mb-4">밀란 쿤데라 - 불멸</div>
+            <div class="w-full bg-stone-100 h-3 border-2 border-black">
+                <div class="bg-[--cool-blue] h-full" style="width: 65%;"></div>
+            </div>
+            <div class="mt-2 text-right text-xs font-bold opacity-40">65% COMPLETED</div>
+        </section>
+    </main>
+
+    <footer class="mt-32 border-t-4 border-black pt-12 flex flex-col md:flex-row justify-between items-start gap-12 reveal">
+        <div class="max-w-md">
+            <div class="neo-bold text-3xl italic mb-4 accent-blue">WHORURUK.LAB</div>
+            <p class="text-base leading-relaxed text-stone-500">
+            </p>
+        </div>
+        <nav class="flex flex-col gap-4 text-xl font-bold italic serif">
+            <a href="#" class="hover:text-[--cool-blue] transition-colors">Instagram</a>
+            <a href="#" class="hover:text-[--cool-blue] transition-colors">GitHub Archive</a>
+            <a href="mailto:hello@whoruruk.lab" class="hover:text-[--cool-blue] transition-colors">Contact Lab</a>
+        </nav>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
